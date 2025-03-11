@@ -59,10 +59,11 @@
 
 <style>
   .card {
+   
     width: 40vw;
     height: 0;
     background-color: #242424;
-    color: #fff;
+    color: #f2f2f2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,6 +76,7 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border: 3px solid #0055CC;
     transition: border-color 0.3s ease-in-out;
+  
   }
 
   .card:hover {
@@ -87,15 +89,12 @@
     font-weight: bold;
   }
 
-  .social {
-    margin-top: 10px;
-  }
 
-  .social a {
-    color: #FFD700;
-    text-decoration: none;
-    font-size: 1rem;
-    margin-left: 10px;
+
+  @media (max-width: 768px) {
+    .card {
+      width: 60vw;
+    }
   }
 </style>
 
