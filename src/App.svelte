@@ -18,14 +18,11 @@
    * @type {string | HTMLParagraphElement}
    */
   let contact;
-  /**
-   * @type {string | HTMLDivElement}
-   */
-  let instagram;
+
 
   onMount(() => {
     gsap.set(card, { opacity: 0 }); // Ocultar el div al inicio
-    gsap.set([label, paragraph, contact, instagram], { opacity: 0 }); // Ocultar el texto al inicio
+    gsap.set([label, paragraph, contact], { opacity: 0 }); // Ocultar el texto al inicio
 
     gsap.to(card, {
       opacity: 1,
@@ -46,7 +43,7 @@
           ease: "power2.out",
           delay: 1
         });
-        gsap.to([contact, instagram], {
+        gsap.to([contact], {
           opacity: 1,
           duration: 1,
           ease: "power2.out",
@@ -59,7 +56,6 @@
 
 <style>
   .card {
-   
     width: 40vw;
     height: 0;
     background-color: #242424;
@@ -79,6 +75,12 @@
   
   }
 
+  .card h1{
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  .card h1{
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+  }
   .card:hover {
     border-color: #FFD700;
   }
@@ -94,6 +96,7 @@
   @media (max-width: 768px) {
     .card {
       width: 60vw;
+      height: 90vh; 
     }
   }
 </style>
@@ -102,15 +105,15 @@
   <h1 bind:this={label} style="
     margin: 0;
     transform: translateY(-20px);
-    font-size: 2.5rem;
+   
     font-weight: bold;
     letter-spacing: 1.5px;
   ">ZOE PLUS</h1>
   <p bind:this={paragraph} style="
     transform: translateY(-20px);
-    font-size: 1.2rem;
+   
     line-height: 1.6;
-    max-width: 80%;
+    max-width: 90%;
   ">
     Transformamos ideas en soluciones digitales. <strong> Creación de software, marketing digital, gestión de redes sociales, fotografía y video, y productos digitales.</strong> Impulsamos tu visión con <strong>innovación y creatividad.</strong> En cada proyecto, un compromiso con la calidad y el detalle.
   </p>
